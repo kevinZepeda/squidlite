@@ -1,0 +1,5 @@
+.git
+README.md
+block/env
+block/__pycache__
+block/SQUIDLITE.sql

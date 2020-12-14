@@ -1,0 +1,60 @@
+DEBUG:root:2020-12-14 00:57:14: 0 http://www.googlde.com/ 127.0.0.1 GET -
+
+
+DEBUG:root:2020-12-14 00:57:47: 0 http://www.google.com/ 172.17.0.3 GET -
+
+
+DEBUG:root:2020-12-14 00:58:28: 0 http://www.facebook.com/ 172.17.0.2 GET -
+
+
+DEBUG:root:2020-12-14 00:58:51: 0 http://www.facesdfsdfsdf.com/ 172.17.0.2 GET -
+
+
+DEBUG:root:2020-12-14 07:37:32: 1 www.fake.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-14 07:38:19: 2 www.google.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-14 07:38:32: 3 www.facebook.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-14 07:39:18: 4 www.facebook.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-14 07:39:46: 5 www.facebook.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-14 17:17:09: 1 www.google.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-14 17:19:07: 2 www.facebook.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-14 17:24:17: 3 www.facebook.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-14 17:24:38: 4 www.facebook.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-14 18:15:56: 1 www.google.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-14 18:16:02: 2 www.googlee.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-14 18:16:29: 3 www.google.mx:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-14 18:16:36: 4 www.google.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-14 18:16:41: 5 www.facebook.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-14 18:17:20: 6 www.facebook.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-14 18:17:45: 7 www.facebook.com:443 172.17.0.3 CONNECT -
+
+

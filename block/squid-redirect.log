@@ -1,0 +1,12 @@
+DEBUG:root:2020-12-14 00:57:14: 0 http://www.googlde.com/ 127.0.0.1 GET -
+
+
+DEBUG:root:2020-12-14 00:57:47: 0 http://www.google.com/ 172.17.0.3 GET -
+
+
+DEBUG:root:2020-12-14 00:58:28: 0 http://www.facebook.com/ 172.17.0.2 GET -
+
+
+DEBUG:root:2020-12-14 00:58:51: 0 http://www.facesdfsdfsdf.com/ 172.17.0.2 GET -
+
+

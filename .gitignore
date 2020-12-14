@@ -1,0 +1,7 @@
+.DS_Store
+.vscode
+squid/etc/cert.pem
+squid/etc/key.pem
+block/__pycache__
+squid/__pycache__
+block/env
