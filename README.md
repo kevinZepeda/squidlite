@@ -49,7 +49,7 @@ Automated builds of the image are available on [Dockerhub](https://hub.docker.co
 
 
 ```bash
-docker pull kevinzepeda/squidlite:1.0-beta
+docker pull kevinzepeda/squidlite:ssl
 ```
 
 Alternatively you can build the image yourself.
@@ -68,7 +68,7 @@ docker run -itd --name squidlite \
   --publish 3129:3129 \
   --volume $(pwd)/squid/cache:/var/spool/squid \
   --volume your_cert.pem:/etc/squid/certificate.pem \
-  kevinzepeda/squidlite:1.0-beta
+  kevinzepeda/squidlite:ssl
 ```
 
 *Alternatively, you can use the sample [docker-compose.yml](docker-compose.yml) file to start the container using [Docker Compose](https://docs.docker.com/compose/)*
@@ -83,7 +83,7 @@ docker run -itd --name squidlite --rm \
   --publish 3129:3129 \
   --volume $(pwd)/squid/cache:/var/spool/squid \
   --volume your_cert.pem:/etc/squid/certificate.pem \
-  kevinzepeda/squidlite:1.0-beta -h
+  kevinzepeda/squidlite:ssl -h
 ```
 
 ## Persistence
@@ -110,7 +110,7 @@ docker run -itd --name squidlite \
   --volume $(pwd)/squid/cache:/var/spool/squid \
   --volume $(pwd)/squid/etc/squid.conf:/etc/squid/squid.conf \
   --volume your_cert.pem:/etc/squid/certificate.pem \
-  kevinzepeda/squidlite:1.0-beta
+  kevinzepeda/squidlite:ssl
 ```
 
 To reload the Squid configuration on a running instance you can send the `HUP` signal to the container.
@@ -191,7 +191,7 @@ To upgrade to newer releases:
   1. Download the updated Docker image:
 
   ```bash
-  docker pull kevinzepeda/squidlite:1.0-beta
+  docker pull kevinzepeda/squidlite:ssl
   ```
 
   2. Stop the currently running image:
@@ -211,7 +211,7 @@ To upgrade to newer releases:
   ```bash
   docker run -name squidlite -d \
     [OPTIONS] \
-    kevinzepeda/squidlite:1.0-beta
+    kevinzepeda/squidlite:ssl
   ```
 
 ## Modify SQL Database

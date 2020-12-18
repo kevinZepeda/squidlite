@@ -13,3 +13,9 @@ CREATE TABLE block (
 	user_id integer,
 	url_id integer
 );
+
+CREATE TABLE urls_child (
+	id integer PRIMARY KEY AUTOINCREMENT,
+	url_id integer,
+	domain varchar
+);

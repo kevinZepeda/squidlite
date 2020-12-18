@@ -13,6 +13,10 @@ fi
 # default behaviour is to launch squid
 if [[ -z ${1} ]]; then
   if [[ ! -d ${SQUID_CACHE_DIR}/00 ]]; then
+    echo "Generate Cert and Key"
+    openssl req -newkey rsa:4096 -x509 -keyout /etc/squid/key.pem -out /etc/squid/cert.pem -nodes -subj "/C=MX"
+    echo "Starting Cert DB"
+    /usr/lib/squid/security_file_certgen -c -s /var/cache/squid/ssl_db -M 4MB
     echo "Initializing cache..."
     $(which squid) -N -f /etc/squid/squid.conf -z
   fi
