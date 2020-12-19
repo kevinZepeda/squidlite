@@ -17,22 +17,6 @@ def create_user(ip):
     except:
         return False
 
-def update_user(id, ip):
-    try:
-        db.execute(users.update().where(users.c.id == id).values(ip=ip))
-        db.commit()
-        return ip
-    except:
-        return False
-
-def delete_user(id):
-    try:
-        db.execute(users.delete().where(users.c.id == id))
-        db.commit()
-        return id
-    except:
-        return False
-
 def get_url(id = None, domain = None):
     if id != None:
         return db.query(urls).filter(urls.c.id == id).first()
@@ -44,22 +28,6 @@ def create_url(domain):
         db.execute(urls.insert().values(domain=domain))
         db.commit()
         return db.query(urls).filter(urls.c.domain == domain).first()
-    except:
-        return False
-
-def update_url(id, domain):
-    try:
-        db.execute(urls.update().where(urls.c.id == id).values(domain=domain))
-        db.commit()
-        return domain
-    except:
-        return False
-
-def delete_url(id):
-    try:
-        db.execute(urls.delete().where(urls.c.id == id))
-        db.commit()
-        return id
     except:
         return False
 
@@ -77,14 +45,6 @@ def get_block(id=None, user_id=None, url_id=None):
 def create_block(user_id, url_id):
     try:
         db.execute(block.insert().values(user_id=user_id, url_id=url_id))
-        db.commit()
-        return db.query(block).filter(block.c.url_id == url_id, block.c.user_id == user_id).first()
-    except:
-        return False
-
-def update_block(id, user_id, url_id):
-    try:
-        db.execute(block.update().where(block.c.id == id).values(user_id=user_id, url_id=url_id))
         db.commit()
         return db.query(block).filter(block.c.url_id == url_id, block.c.user_id == user_id).first()
     except:

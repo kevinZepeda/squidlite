@@ -23,7 +23,7 @@ def unblock(user_ip, domain):
 if __name__ == '__main__':
     
     help_message = """
-        Unblock User BY [user_ip]
+Unblock User BY [user_ip]
 
         usage: [user_ip] [domain] | [--get] [user_ip]
 

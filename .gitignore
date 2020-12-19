@@ -5,3 +5,5 @@ squid/etc/key.pem
 block/__pycache__
 squid/__pycache__
 block/env
+block_lite/__pycache__
+block_lite/env

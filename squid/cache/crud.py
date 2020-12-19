@@ -1,107 +1,58 @@
-from session import db
-from tables import users, urls, block
-
-def get_user(id = None, ip = None):
-    if id != None:
-        return db.query(users).filter(users.c.id == id).first()
-    elif ip != None:
-        return db.query(users).filter(users.c.ip == ip).first()
-def get_users():
-    return db.query(users).all()
+from session import conn, db
 
 def create_user(ip):
-    try:
-        db.execute(users.insert().values(ip=ip))
-        db.commit()
-        return db.query(users).filter(users.c.ip == ip).first()
-    except:
-        return False
+    db.execute('''INSERT INTO users ("IP") VALUES ("%s");''' % ip)
+    conn.commit()
+    return db.execute('''SELECT * FROM users WHERE ip = "%s";''' % ip)
 
-def update_user(id, ip):
-    try:
-        db.execute(users.update().where(users.c.id == id).values(ip=ip))
-        db.commit()
-        return ip
-    except:
-        return False
-
-def delete_user(id):
-    try:
-        db.execute(users.delete().where(users.c.id == id))
-        db.commit()
-        return id
-    except:
-        return False
-
-def get_url(id = None, domain = None):
+def get_user(id=None, ip=None):
     if id != None:
-        return db.query(urls).filter(urls.c.id == id).first()
-    elif domain != None:
-        return db.query(urls).filter(urls.c.domain == domain).first()
+        return db.execute('''SELECT * FROM users WHERE id = "%s";''' % id)
+    elif ip != None:
+        return db.execute('''SELECT * FROM users WHERE ip = "%s";''' % ip)
 
 def create_url(domain):
-    try:
-        db.execute(urls.insert().values(domain=domain))
-        db.commit()
-        return db.query(urls).filter(urls.c.domain == domain).first()
-    except:
-        return False
-
-def update_url(id, domain):
-    try:
-        db.execute(urls.update().where(urls.c.id == id).values(domain=domain))
-        db.commit()
-        return domain
-    except:
-        return False
-
-def delete_url(id):
-    try:
-        db.execute(urls.delete().where(urls.c.id == id))
-        db.commit()
-        return id
-    except:
-        return False
-
-def get_block(id=None, user_id=None, url_id=None):
+    db.execute('''INSERT INTO urls ("domain") VALUES ("%s");''' % domain)
+    conn.commit()
+    return db.execute('''SELECT * FROM urls WHERE domain = "%s";''' % domain)
+    
+def get_url(id=None, domain=None):
     if id != None:
-        return db.query(block).filter(block.c.id == id).first()
-        pass
-    elif user_id != None and url_id != None:
-        return db.query(block).filter(block.c.user_id == user_id, block.c.url_id == url_id).first()
-    elif user_id != None and url_id == None:
-        return db.query(block).filter(block.c.user_id == user_id).all()
-    elif user_id == None and url_id != None:
-        return db.query(block).filter(block.c.url_id == url_id).all()
+        return db.execute('''SELECT * FROM urls WHERE id = "%s";''' % id)
+    elif domain != None:
+        return db.execute('''SELECT * FROM urls WHERE domain = "%s";''' % domain)
+
+def create_child_url(url_id, domain):
+    db.execute('''INSERT INTO urls_child ("url_id", "domain") VALUES (?, ?);''', (url_id, domain))
+    conn.commit()
+    return db.execute('''SELECT * FROM urls_child WHERE url_id = "%s";''' % url_id)
+    
+def get_child_url(id=None, url_id=None):
+    if id != None:
+        return db.execute('''SELECT * FROM urls_child WHERE id = "%s";''' % id)
+    elif url_id != None:
+        return db.execute('''SELECT * FROM urls_child WHERE url_id = "%s";''' % url_id)
 
 def create_block(user_id, url_id):
-    try:
-        db.execute(block.insert().values(user_id=user_id, url_id=url_id))
-        db.commit()
-        return db.query(block).filter(block.c.url_id == url_id, block.c.user_id == user_id).first()
-    except:
-        return False
+    db.execute('''INSERT INTO block ("user_id", "url_id") VALUES (?, ?)''', (user_id, url_id))
+    conn.commit()
+    return db.execute('''SELECT * FROM block WHERE user_id = :user and url_id = :url''', {"user":user_id, "url":url_id})
 
-def update_block(id, user_id, url_id):
-    try:
-        db.execute(block.update().where(block.c.id == id).values(user_id=user_id, url_id=url_id))
-        db.commit()
-        return db.query(block).filter(block.c.url_id == url_id, block.c.user_id == user_id).first()
-    except:
-        return False
+def delete_block(user_id, url_id):
+    db.execute('''DELETE FROM block WHERE user_id = :user and url_id = :url''', {"user":user_id, "url":url_id})
+    conn.commit()
+    return db
 
-def delete_block(id):
+def blocked_sites(user_ip=None, all=True):
     try:
-        db.execute(block.delete().where(block.c.id == id))
-        db.commit()
-        return id
-    except:
-        return False
-
-def blocked_sites(user_ip):
-    try:
-        user = db.query(users).filter(users.c.ip == user_ip).first()
-        blocked = db.query(block).filter(block.c.user_id == user.id).all()
-        return [db.query(urls).filter(urls.c.id == site.url_id).first() for site in blocked]
+        user = get_user(ip=user_ip).fetchone()
+        blocked = db.execute(''' SELECT * FROM block WHERE user_id = "%s";''' % user[0]).fetchall()
+        sites = [get_url(site[2]).fetchone()[1] for site in blocked]
+        if (all == True):
+            sites.extend([ domain for site in list(map(lambda x: list(map(lambda site: site[2], x)), [get_child_url(url_id=site[2]).fetchall() for site in blocked])) for domain in site])
+        return sites
     except:
         return []
+
+
+

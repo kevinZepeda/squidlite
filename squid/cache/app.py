@@ -13,7 +13,7 @@ def main():
         logging.debug(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ': ' + request +'\n')
         response  = ch_id + ' OK'
         if is_blocked(url, ipaddr):
-            response +=  ' rewrite-url=https://api.kinetworking.com/blocked?JNI_URL=' + str(url) + '&JNI_SRCIP=' + str(ipaddr)
+            response +=  ' rewrite-url=http://www.myattmx.com/api/blocked?JNI_URL=' + str(url) + '&JNI_SRCIP=' + str(ipaddr)
         response += '\n'
         sys.stdout.write(response)
         sys.stdout.flush()
