@@ -1,6 +1,15 @@
 #!/bin/bash
 set -e
 
+mkdir -p /var/log/squid
+chmod 777 -R /var/log/squid
+chown squid:squid /var/log/squid
+
+mkdir -p /var/spool/squid
+chmod 777 -R /var/spool/squid
+chown squid:squid /var/spool/squid
+
+
 # allow arguments to be passed to squid
 if [[ ${1:0:1} = '-' ]]; then
   EXTRA_ARGS="$@"
@@ -16,7 +25,7 @@ if [[ -z ${1} ]]; then
     echo "Generate Cert and Key"
     openssl req -newkey rsa:4096 -x509 -keyout /etc/squid/key.pem -out /etc/squid/cert.pem -nodes -subj "/C=MX"
     echo "Starting Cert DB"
-    /usr/lib/squid/security_file_certgen -c -s /var/cache/squid/ssl_db -M 4MB
+    /usr/lib/squid/security_file_certgen -c -s /var/cache/squid/ssl_db -M 20MB
     echo "Initializing cache..."
     $(which squid) -N -f /etc/squid/squid.conf -z
   fi

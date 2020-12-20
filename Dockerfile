@@ -1,10 +1,12 @@
 FROM alpine:latest
 LABEL maintainer="@kevinzepeda"
 
-RUN apk update \
- && apk add bash squid 
+WORKDIR /var/spool/squid
 
-RUN apk add python3 && apk add py3-pip 
+RUN apk update \
+ && apk add bash squid \
+ && apk add python3 py3-pip \
+ && apk -U add ca-certificates openssl
 
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh
