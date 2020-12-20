@@ -1,14 +1,21 @@
 #!/bin/bash
 set -e
 
+echo "Create log_dir"
 mkdir -p /var/log/squid
 chmod 777 -R /var/log/squid
 chown squid:squid /var/log/squid
 
+echo "Create cache_dir"
 mkdir -p /var/spool/squid
 chmod 777 -R /var/spool/squid
 chown squid:squid /var/spool/squid
 
+echo "Add program block_files"
+cp /etc/block /var/spool/squid
+
+echo "Add default config"
+cp /etc/squid_default/squid.conf /etc/squid/squid.conf
 
 # allow arguments to be passed to squid
 if [[ ${1:0:1} = '-' ]]; then
