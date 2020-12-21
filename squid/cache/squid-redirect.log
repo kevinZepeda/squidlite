@@ -10,3 +10,54 @@ DEBUG:root:2020-12-19 12:49:55: 0 fb.me 02.1.1.0 GET -
 DEBUG:root:2020-12-19 12:50:11: 0 facebook.macokr 02.1.1.0 GET -
 
 
+DEBUG:root:2020-12-21 14:44:58: 1 http://google.com/ 172.17.0.3 GET -
+
+
+DEBUG:root:2020-12-21 14:45:18: 2 www.google.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-21 14:46:24: 3 www.google.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-21 14:46:33: 4 www.google.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-21 14:46:44: 5 http://google.com/ 172.17.0.3 GET -
+
+
+DEBUG:root:2020-12-21 14:51:10: 6 http://google.com/ 172.17.0.3 GET -
+
+
+DEBUG:root:2020-12-21 14:51:33: 7 http://google.com/ 172.17.0.3 GET -
+
+
+DEBUG:root:2020-12-21 14:51:46: 8 http://www.google.com/ 172.17.0.3 GET -
+
+
+DEBUG:root:2020-12-21 14:51:54: 9 www.google.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-21 14:52:38: 1 www.google.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-21 14:52:38: Redirect from:www.google.com:443
+
+DEBUG:root:2020-12-21 14:53:00: 2 http://google.com/ 172.17.0.3 GET -
+
+
+DEBUG:root:2020-12-21 14:53:00: Redirect from:http://google.com/
+
+DEBUG:root:2020-12-21 14:54:18: 3 http://yahoo.com/ 172.17.0.3 GET -
+
+
+DEBUG:root:2020-12-21 14:54:33: 4 http://espanol.yahoo.com/ 172.17.0.3 GET -
+
+
+DEBUG:root:2020-12-21 14:54:46: 5 www.yahoo.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-21 14:55:35: 6 www.google.com:443 172.17.0.3 CONNECT -
+
+
+DEBUG:root:2020-12-21 14:55:35: Redirect from:www.google.com:443
+

@@ -1,0 +1,18 @@
+1608522473.348      0 172.17.0.1 NONE/000 0 NONE error:accept-client-connection - HIER_NONE/- -
+1608523310.427    576 172.17.0.3 TCP_MISS/503 532 GET http://google.com/ - HIER_DIRECT/142.250.69.14 -
+1608560448.812      0 172.17.0.3 NONE/000 0 NONE error:accept-client-connection - HIER_NONE/- -
+21/Dec/2020:14:44:58 +0000    380 172.17.0.3 TCP_MISS/301 666 GET http://google.com/ - HIER_DIRECT/google.com text/html
+21/Dec/2020:14:45:19 +0000    235 172.17.0.3 TCP_TUNNEL/200 17973 CONNECT www.google.com:443 - HIER_DIRECT/www.google.com -
+21/Dec/2020:14:46:24 +0000     20 172.17.0.3 NONE/503 0 CONNECT http:443 - HIER_NONE/- -
+21/Dec/2020:14:46:33 +0000     22 172.17.0.3 NONE/503 0 CONNECT http:443 - HIER_NONE/- -
+21/Dec/2020:14:46:44 +0000    309 172.17.0.3 TCP_MISS/200 6367 GET http://www.myattmx.com/api/blocked? - HIER_DIRECT/www.myattmx.com text/html
+21/Dec/2020:14:51:10 +0000    265 172.17.0.3 TCP_REFRESH_MODIFIED/200 6366 GET http://www.myattmx.com/api/blocked? - HIER_DIRECT/www.myattmx.com text/html
+21/Dec/2020:14:51:33 +0000    156 172.17.0.3 TCP_REFRESH_MODIFIED/200 6366 GET http://www.myattmx.com/api/blocked? - HIER_DIRECT/www.myattmx.com text/html
+21/Dec/2020:14:51:46 +0000    142 172.17.0.3 TCP_MISS/200 6371 GET http://www.myattmx.com/api/blocked? - HIER_DIRECT/www.myattmx.com text/html
+21/Dec/2020:14:51:54 +0000     36 172.17.0.3 NONE/503 0 CONNECT http:443 - HIER_NONE/- -
+21/Dec/2020:14:52:38 +0000    221 172.17.0.3 NONE/503 0 CONNECT http:443 - HIER_NONE/- -
+21/Dec/2020:14:53:00 +0000    249 172.17.0.3 TCP_REFRESH_MODIFIED/200 6366 GET http://www.myattmx.com/api/blocked? - HIER_DIRECT/www.myattmx.com text/html
+21/Dec/2020:14:54:18 +0000    343 172.17.0.3 TCP_MISS/301 390 GET http://yahoo.com/ - HIER_DIRECT/yahoo.com text/html
+21/Dec/2020:14:54:33 +0000    195 172.17.0.3 TCP_MISS/301 398 GET http://espanol.yahoo.com/ - HIER_DIRECT/espanol.yahoo.com text/html
+21/Dec/2020:14:54:46 +0000    321 172.17.0.3 TCP_TUNNEL/200 4768 CONNECT www.yahoo.com:443 - HIER_DIRECT/www.yahoo.com -
+21/Dec/2020:14:55:35 +0000     28 172.17.0.3 NONE/503 0 CONNECT http:443 - HIER_NONE/- -
