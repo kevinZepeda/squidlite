@@ -3,3 +3,6 @@ README.md
 block/env
 block/__pycache__
 block/SQUIDLITE.sql
+block_lite/env
+block_lite/__pycache__
+block_lite/SQUIDLITE.sql

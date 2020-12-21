@@ -12,7 +12,7 @@ chmod 777 -R /var/spool/squid
 chown squid:squid /var/spool/squid
 
 echo "Add program block_files"
-cp /etc/block /var/spool/squid
+cp /etc/block/* /var/spool/squid
 
 echo "Add default config"
 cp /etc/squid_default/squid.conf /etc/squid/squid.conf
