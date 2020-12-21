@@ -14,6 +14,8 @@ def main():
         response  = ch_id + ' OK'
         if is_blocked(url, ipaddr):
             response +=  ' rewrite-url=http://www.myattmx.com/api/blocked?JNI_URL=' + str(url) + '&JNI_SRCIP=' + str(ipaddr)
+            logging.debug(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ': ' + url + 'Redirected' +'\n')
+        logging.debug(datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ': ' ' IP: '+ ipaddr + url + 'Redirected' +'\n')
         response += '\n'
         sys.stdout.write(response)
         sys.stdout.flush()
