@@ -3,8 +3,11 @@ set -e
 
 echo "Create log_dir"
 mkdir -p /var/log/squid
+touch /var/log/squid/cache.log
+touch /var/log/squid/access.log
 chmod 777 -R /var/log/squid
 chown squid:squid /var/log/squid
+
 
 echo "Create cache_dir"
 mkdir -p /var/spool/squid
