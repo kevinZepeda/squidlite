@@ -17,8 +17,7 @@ echo "Add program block_files"
 cp /etc/block/* /var/spool/squid
 chmod 777 -R /var/spool/squid
 
-echo "Add default config"
-cp /etc/squid_default/squid.conf /etc/squid/squid.conf
+
 
 # allow arguments to be passed to squid
 if [[ ${1:0:1} = '-' ]]; then

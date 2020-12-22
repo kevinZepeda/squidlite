@@ -40,3 +40,38 @@ services:
     depends_on:
       - nginx-proxy
       - letsencrypt
+
+
+docker run -itd --rm --network host \
+--name proxy-squid
+--volume /var/run/docker.sock:/tmp/docker.sock:ro \
+--volume $(pwd)/certs/files:/etc/nginx/certs:ro \
+--volume $(pwd)/certs/vhostd:/etc/nginx/vhost.d \
+--volume $(pwd)/certs/html:/usr/share/nginx/html \
+--label com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy \
+jwilder/nginx-proxy
+
+docker run -itd --rm --network host \
+-e NGINX_PROXY_CONTAINER=proxy-squid \
+--volume $(pwd)/certs/files:/etc/nginx/certs:rw \
+--volume $(pwd)/certs/vhostd:/etc/nginx/vhost.d \
+--volume $(pwd)/certs/html:/usr/share/nginx/html \
+--volume /var/run/docker.sock:/var/run/docker.sock:ro \
+jrcs/letsencrypt-nginx-proxy-companion
+
+docker run -itd --rm \
+--expose "80" \
+--volume $(pwd)/certs/html:/usr/share/nginx/html:ro \
+-e VIRTUAL_HOST=proxy.myattmx.com \
+-e LETSENCRYPT_HOST=proxy.myattmx.com \
+-e LETSENCRYPT_EMAIL=kevin@proxy.myattmx.com \
+nginx
+
+docker run -it --rm --name squidlite  \
+--network host \
+--volume $(pwd)/cache:/var/spool/squid \
+--volume $(pwd)/log:/var/log/squid \
+--volume $(pwd)/etc/squid.conf:/etc/squid/squid.conf \
+--volume $(pwd)/certs/files/proxy.myattmx.com/cert.pem:/etc/squid/cert.pem \
+--volume $(pwd)/certs/files/proxy.myattmx.com/key.pem:/etc/squid/key.pem \
+kevinzepeda/squidlite:ssl
