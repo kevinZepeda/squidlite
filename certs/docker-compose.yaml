@@ -75,3 +75,10 @@ docker run -it --rm --name squidlite  \
 --volume $(pwd)/certs/files/proxy.myattmx.com/cert.pem:/etc/squid/cert.pem \
 --volume $(pwd)/certs/files/proxy.myattmx.com/key.pem:/etc/squid/key.pem \
 kevinzepeda/squidlite:ssl
+
+docker run -it --rm --name squidlite  \
+--network host \
+--volume $(pwd)/squid/cache:/var/spool/squid \
+--volume $(pwd)/squid/log:/var/log/squid \
+--volume $(pwd)/squid/etc/squid.conf:/etc/squid/squid.conf \
+kevinzepeda/squidlite:ssl

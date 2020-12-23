@@ -10,54 +10,115 @@ DEBUG:root:2020-12-19 12:49:55: 0 fb.me 02.1.1.0 GET -
 DEBUG:root:2020-12-19 12:50:11: 0 facebook.macokr 02.1.1.0 GET -
 
 
-DEBUG:root:2020-12-21 14:44:58: 1 http://google.com/ 172.17.0.3 GET -
+DEBUG:root:2020-12-22 13:32:16: request 0 21.12.23.2 google.com GET -
 
 
-DEBUG:root:2020-12-21 14:45:18: 2 www.google.com:443 172.17.0.3 CONNECT -
+INFO:root:2020-12-22 13:32:16: squidlite  src_ip=google.com url=21.12.23.2 action=CONNECT
+
+DEBUG:root:2020-12-22 15:03:07: request 0 126.34.43.4 ticktok.com GET -
 
 
-DEBUG:root:2020-12-21 14:46:24: 3 www.google.com:443 172.17.0.3 CONNECT -
+INFO:root:2020-12-22 15:03:07: squidlite  src_ip=ticktok.com url=126.34.43.4 action=CONNECT
+
+DEBUG:root:2020-12-22 15:56:04: request 0 12.12.12.0 google.com GET -
 
 
-DEBUG:root:2020-12-21 14:46:33: 4 www.google.com:443 172.17.0.3 CONNECT -
+INFO:root:2020-12-22 15:56:04: squidlite  src_ip=google.com url=12.12.12.0 action=CONNECT
+
+DEBUG:root:2020-12-22 15:56:32: request 0 google.com 12.12.12.0 GET -
 
 
-DEBUG:root:2020-12-21 14:46:44: 5 http://google.com/ 172.17.0.3 GET -
+ERROR:root:2020-12-22 15:56:32: squidlite  src_ip=12.12.12.0 url=google.com action=REDIRECT
+
+DEBUG:root:2020-12-22 15:57:08: request 0 google.com 123.23.23.3 GET -
 
 
-DEBUG:root:2020-12-21 14:51:10: 6 http://google.com/ 172.17.0.3 GET -
+INFO:root:2020-12-22 15:57:08: squidlite  src_ip=123.23.23.3 url=google.com action=CONNECT
+
+DEBUG:root:2020-12-22 15:58:40: request 0 google.com 12.12.12.0 GET -
 
 
-DEBUG:root:2020-12-21 14:51:33: 7 http://google.com/ 172.17.0.3 GET -
+ERROR:root:2020-12-22 15:58:40: squidlite  src_ip=12.12.12.0 url=google.com action=REDIRECT
 
+ERROR:root:2020-12-22 15:59:01: squidlite  src_ip=12.12.12.0 url=google.com action=REDIRECT
 
-DEBUG:root:2020-12-21 14:51:46: 8 http://www.google.com/ 172.17.0.3 GET -
+INFO:root:2020-12-22 15:59:12: squidlite  src_ip=23.23.23.23 url=google.com action=CONNECT
 
+INFO:root:2020-12-22 16:04:51: squidlite  src_ip=12.12.12.0 url=google.com action=CONNECT
 
-DEBUG:root:2020-12-21 14:51:54: 9 www.google.com:443 172.17.0.3 CONNECT -
+INFO:root:2020-12-22 16:05:16: squidlite  src_ip=12.12.12.0 url=google.com action=CONNECT
 
+INFO:root:2020-12-22 16:05:16: squidlite  src_ip=12.12.12.0 url=google.com action=CONNECT
 
-DEBUG:root:2020-12-21 14:52:38: 1 www.google.com:443 172.17.0.3 CONNECT -
+INFO:root:2020-12-22 16:05:17: squidlite  src_ip=12.12.12.0 url=google.com action=CONNECT
 
+INFO:root:2020-12-22 16:05:17: squidlite  src_ip=12.12.12.0 url=google.com action=CONNECT
 
-DEBUG:root:2020-12-21 14:52:38: Redirect from:www.google.com:443
+INFO:root:2020-12-22 16:06:02: squidlite  src_ip=12.12.12.0 url=google.com action=CONNECT
 
-DEBUG:root:2020-12-21 14:53:00: 2 http://google.com/ 172.17.0.3 GET -
+INFO:root:2020-12-22 16:06:03: squidlite  src_ip=12.12.12.0 url=google.com action=CONNECT
 
+INFO:root:2020-12-22 16:06:03: squidlite  src_ip=12.12.12.0 url=google.com action=CONNECT
 
-DEBUG:root:2020-12-21 14:53:00: Redirect from:http://google.com/
+INFO:root:2020-12-22 16:06:04: squidlite  src_ip=12.12.12.0 url=google.com action=CONNECT
 
-DEBUG:root:2020-12-21 14:54:18: 3 http://yahoo.com/ 172.17.0.3 GET -
+INFO:root:2020-12-22 16:06:04: squidlite  src_ip=12.12.12.0 url=google.com action=CONNECT
 
+INFO:root:2020-12-22 16:06:05: squidlite  src_ip=12.12.12.0 url=google.com action=CONNECT
 
-DEBUG:root:2020-12-21 14:54:33: 4 http://espanol.yahoo.com/ 172.17.0.3 GET -
+INFO:root:2020-12-22 16:06:06: squidlite  src_ip=12.12.12.0 url=google.com action=CONNECT
 
+INFO:root:2020-12-22 16:06:06: squidlite  src_ip=12.12.12.0 url=google.com action=CONNECT
 
-DEBUG:root:2020-12-21 14:54:46: 5 www.yahoo.com:443 172.17.0.3 CONNECT -
+INFO:root:2020-12-22 16:06:07: squidlite  src_ip=12.12.12.0 url=google.com action=CONNECT
 
+INFO:root:2020-12-22 16:06:08: squidlite  src_ip=12.12.12.0 url=google.com action=CONNECT
 
-DEBUG:root:2020-12-21 14:55:35: 6 www.google.com:443 172.17.0.3 CONNECT -
+INFO:root:2020-12-22 16:07:27: squidlite  src_ip=12.12.12.0 url=facebook.com action=CONNECT
 
+ERROR:root:2020-12-22 16:08:02: squidlite  src_ip=12.12.12.0 url=facebook.com action=REDIRECT
 
-DEBUG:root:2020-12-21 14:55:35: Redirect from:www.google.com:443
+INFO:root:2020-12-22 16:19:55: squidlite  src_ip=12.12.12.0 url=gget.com action=CONNECT
+
+ERROR:root:2020-12-22 16:21:04: squidlite  src_ip=12.12.12.0 url=google.com action=REDIRECT
+
+ERROR:root:2020-12-22 16:34:26: squidlite  src_ip=12.12.12.0 url=google.com action=REDIRECT
+
+ERROR:root:2020-12-22 21:23:26: squidlite  src_ip=12.12.12.0 domain=google.com action=REDIRECT app=
+
+INFO:root:2020-12-22 21:23:55: squidlite  src_ip=12.12.12.0 domain=faceboo.com action=CONNECT
+
+INFO:root:2020-12-22 21:24:08: squidlite  src_ip=12.12.12.0 domain=facebook.com action=CONNECT
+
+ERROR:root:2020-12-22 21:24:58: squidlite  src_ip=12.12.12.0 domain=yahoo.com action=REDIRECT app=
+
+ERROR:root:2020-12-22 21:26:07: squidlite  src_ip=12.12.12.0 domain=google.com action=REDIRECT app=
+
+ERROR:root:2020-12-23 00:16:54|squidlite|src_ip=12.12.12.0|domain=google.com|app=_|action=REDIRECT
+
+ERROR:root:2020-12-23 00:18:21|squidlite|src_ip=12.12.12.0|domain=google.com|app=_|action=REDIRECT
+
+INFO:root:2020-12-23 00:19:12|squidlite|src_ip=12.12.12.0|domain=www.eluniversal.comapp=_|action=CONNECT
+
+ERROR:root:2020-12-23 00:19:52|squidlite|src_ip=12.12.12.0|domain=google.com|app=_|action=REDIRECT
+
+ERROR:root:2020-12-23 00:21:00|squidlite|src_ip=12.12.12.0|domain=google.com|app=_|action=REDIRECT
+
+ERROR:root:2020-12-23 00:30:15|squidlite|src_ip=12.12.12.0|domain=google.com|app=_|action=REDIRECT
+
+INFO:root:2020-12-23 00:30:43|squidlite|src_ip=12.12.12.0|domain=[]|app=_|action=CONNECT
+
+INFO:root:2020-12-23 00:32:59|squidlite|src_ip=12.12.12.0|domain=[]|app=_|action=CONNECT
+
+INFO:root:2020-12-23 00:33:14|squidlite|src_ip=12.12.12.0|domain=facebook.com|app=_|action=CONNECT
+
+INFO:root:2020-12-23 00:34:02|squidlite|src_ip=12.12.12.0|domain=lostiempoas.com|app=_|action=CONNECT
+
+INFO:root:2020-12-23 00:34:17|squidlite|src_ip=12.12.12.0|domain=lostiempos.com|app=_|action=CONNECT
+
+INFO:root:2020-12-23 00:34:56|squidlite|src_ip=12.12.12.0|domain=netflix.com|app=_|action=CONNECT
+
+ERROR:root:2020-12-23 00:39:15|squidlite|src_ip=12.12.12.0|domain=cdn.xx.facebook.com|app=facebook|action=REDIRECT
+
+ERROR:root:2020-12-23 00:39:57|squidlite|src_ip=12.12.12.0|domain=cdn.xx.facebook.com|app=facebook|action=REDIRECT
 

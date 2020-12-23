@@ -3,19 +3,20 @@ CREATE TABLE users (
 	ip varchar
 );
 
-CREATE TABLE urls (
+CREATE TABLE apps (
 	id integer PRIMARY KEY AUTOINCREMENT,
-	domain varchar
+	name varchar
 );
 
 CREATE TABLE block (
 	id integer PRIMARY KEY AUTOINCREMENT,
 	user_id integer,
-	url_id integer
+	domain varchar,
+	app_id integer
 );
 
-CREATE TABLE urls_child (
+CREATE TABLE apps_urls (
 	id integer PRIMARY KEY AUTOINCREMENT,
-	url_id integer,
+	app_id integer,
 	domain varchar
 );
